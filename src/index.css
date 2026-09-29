@@ -1,0 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/optimistic');
+
+*{
+    font-family:  'Optimistic Text', sans-serif;
+    /* font-size: 16px; */
+
+}
+
+
+:root {
+  --primary-color: #0b7c8c;
+  --accent-color: #4dd4d6;
+  --accent-color2: #d0f9fb;
+  --background: #141414;
+  --text: rgb(216, 216, 216);
+  --spacing: 24px;
+  --radius: 12px;
+  --max-width: 1400px;
+  --placeholder: rgb(143, 143, 143);
+}

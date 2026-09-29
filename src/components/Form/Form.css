@@ -1,0 +1,84 @@
+button{
+    background-color: var(--primary-color);
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: rgb(250, 250, 250);
+    /* font-weight: 600; */
+    margin-right: 6px;
+    margin-bottom: 6px;
+    /* margin: 0px 12px; */
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    /* border: 1px solid var(--primary-color);
+    border-radius: var(--radius);
+    padding: 12px; */
+}
+
+.form-section{
+
+    margin-bottom: 24px;
+    /* border: 1px solid var(--primary-color); */
+    border-radius: var(--radius);
+    padding: 24px;
+    background-color: #1a1a1a;
+    color: var(--text);
+
+}
+
+.form-section h2{
+    margin-bottom: 21px;
+}
+
+input{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    border: none;
+    margin: 6px 0px;
+    background-color: #272727;
+    color: white;
+    margin-bottom: 16px;
+
+}
+
+input[type="date"] {
+  width: 200px;
+  padding: 10px;
+  color: var(--text);
+}
+
+.form-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.individual-form-wrapper{
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+input::placeholder{
+    color: var(--placeholder);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input[type="date"]:invalid {
+  color: #999999; 
+}
+/*
+Source - https://stackoverflow.com/a/16106788
+Posted by Anselm, modified by community. See post 'Timeline' for change history
+Retrieved 2026-09-29, License - CC BY-SA 4.0
+*/
+
+::-webkit-datetime-edit { padding: 0.1em; }
+::-webkit-datetime-edit-text {padding: 0 0.3em; }

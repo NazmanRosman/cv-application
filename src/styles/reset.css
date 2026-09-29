@@ -1,0 +1,137 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+/* ==========================================================================
+   1. Core Base Reset (Root & Body)
+   ========================================================================== */
+html {
+  /* Set base font size to 100% (usually 16px in most browsers). 
+     This ensures accessibility preferences are respected. */
+  font-size: 100%; 
+  /* Prevents iOS text size adjustment after orientation change */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* Fluid system font stack */
+  /* Base text size (equals 16px if html is 100%) */
+  font-size: 1rem; 
+  /* 1.5 line height improves readability for standard body text */
+  line-height: 1.5; 
+  /* Enhances font rendering on macOS/iOS browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   2. Font Reset & Normalization
+   ========================================================================== */
+/* Remove default margins that cause erratic spacing across browsers */
+h1, h2, h3, h4, h5, h6, p, em, strong, blockquote {
+  margin: 0;
+}
+
+/* Ensure interactive elements inherit your clean typography */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* ==========================================================================
+   3. Inline Text Semantics
+   ========================================================================== */
+/* Reset em and strong to preserve their meaning without conflicting styles */
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Prevent text wrapping issues on specific layouts */
+p {
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   4. Scalable Heading Hierarchy (The System)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  /* Shorter line-height for large titles prevents awkward spacing */
+  line-height: 1.1; 
+  /* Prevents single words from wrapping to a new line (orphan prevention) */
+  text-wrap: balance; 
+  /* Add consistent spacing below headings */
+  /* margin-bottom: 0.5em;  */
+}
+
+/* 
+   Using rems ensures headings scale relative to the root font size. 
+   Using ems for margins ensures spacing scales perfectly with the text size.
+*/
+h1 { font-size: 2.5rem; }   /* ~40px */
+h2 { font-size: 1.8rem; }     /* ~32px */
+h3 { font-size: 1.75rem; }  /* ~28px */
+h4 { font-size: 1.5rem; }   /* ~24px */
+h5 { font-size: 1.25rem; }  /* ~20px */
+h6 { font-size: 1rem; }     /* ~16px (Same as body, but bold) */
