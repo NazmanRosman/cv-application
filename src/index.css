@@ -1,7 +1,9 @@
-@import url('https://fonts.cdnfonts.com/css/optimistic');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 *{
-    font-family:  'Optimistic Text', sans-serif;
+  font-family: 'Manrope', sans-serif;
     /* font-size: 16px; */
 
 }
