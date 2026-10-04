@@ -72,30 +72,28 @@ input[type="date"] {
 }
 
 .individual-form-wrapper{
-    /* padding: 12px 0; */
     display: grid;
     grid-template-rows: 1fr;
-    padding: 24px 24px 24px 24px;
     transition: grid-template-rows 0.3s ease-in-out, padding 0.3s ease-in-out;
-    /* min-width:100px; */
-
-    /* opacity: 1; */
-
-    > form{
-        overflow: hidden;
-    }
+    z-index: 1;
+    overflow: hidden;
 
     @starting-style {
         grid-template-rows: 0fr;
 
     }
+}
 
+form{
+    padding: 24px 24px 24px 24px;
+    overflow: hidden;
+    
 
 }
 
 .individual-form-wrapper.closing{
     grid-template-rows: 0fr;
-    padding: 0px 24px;
+    /* padding: 0px 24px; */
     
 }
 
@@ -128,4 +126,6 @@ input[type="date"]:invalid {
 
 .add-more-button-container{
     padding: 0 0 24px 24px;
+    background-color: none;
+    z-index: 2;
 }

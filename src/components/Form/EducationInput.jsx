@@ -44,7 +44,7 @@ function EducationInput({setEducations, setEducationKeys, educationKeys, id}) {
             }
         }, 300);
     }
-    
+
     function addMore(){
         setEducationKeys([...educationKeys, crypto.randomUUID()])
     }
