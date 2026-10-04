@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 function JobInput({setJobKeys, jobKeys, setJobs, id}) {
+  const [closing, setClosing] = useState(false);
 
   function save(e){
       e.preventDefault();
@@ -15,6 +16,7 @@ function JobInput({setJobKeys, jobKeys, setJobs, id}) {
         endDate: formData.get("endDate"),
       };
 
+      //send data to cv.jsx
       setJobs((prevJobs) =>{
         
         let existingJob = prevJobs.find((item)=> item.id===id);
@@ -29,23 +31,32 @@ function JobInput({setJobKeys, jobKeys, setJobs, id}) {
       });
   }
 
-  function remove(){
-    setJobs((prevJobs)=>{
-      let removed = prevJobs.filter((item)=> item.id !== id);
-      return [...removed];
-    }) 
-    //if only one job form, dont delete key
-    if(jobKeys.length > 1){
-      setJobKeys((prevJobs)=>{
-        let removed = prevJobs.filter((item)=> item !== id);
-        return [...removed];
-      }) 
-    }
-  }
 
+  function remove(){
+    if(jobKeys.length > 1){
+        setClosing(true);
+    }
+
+    //delete data from cv.jsx
+    setJobs((prevJobs)=>{
+        let removed = prevJobs.filter((item)=> item.id !== id);
+        return [...removed];
+    }) 
+    //if only one education form, dont delete key
+    setTimeout(()=>{
+        if(jobKeys.length > 1){
+            setJobKeys((prevJobs)=>{
+                let removed = prevJobs.filter((item)=> item !== id);
+                return [...removed];
+            }) 
+        }
+    }, 300);
+}
+    
   return (
-  <form onSubmit={save}>
-      <div className="individual-form-wrapper">
+  <div className={`individual-form-wrapper ${closing ? "closing" : ""}`}>  
+    <form onSubmit={save}>
+      
        Company: 
         <div><input name="company" placeholder="Company"></input></div>
         Job Title: 
@@ -62,8 +73,9 @@ function JobInput({setJobKeys, jobKeys, setJobs, id}) {
           <button type="button" onClick={remove}>Delete</button>
           <button type="button">Edit</button>
         </div>
-      </div>
-  </form>
+      </form>
+    </div>
+  
   )
 }
 

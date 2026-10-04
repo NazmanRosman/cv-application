@@ -30,16 +30,21 @@ function Form({setPersonal, setJobs, setEducations}) {
         <PersonalInput setPersonal={setPersonal}/>
       </div>
 
-      <div className="form-section">
+      <div className="form-section multiple">
         <h2>Education</h2>
         {displayForms(educationKeys, "education")}
-        <button onClick={()=>addMore("education")}>Add more</button>
+          <div className="add-more-button-container">
+            <button className="add-more-button" onClick={()=>addMore("education")}>Add more</button>
+  
+          </div>
       </div>
 
-      <div className="form-section">
+      <div className="form-section multiple">
         <h2>Experience</h2>
         {displayForms(jobKeys, "job")}
-        <button onClick={()=>addMore("job")}>Add more</button>
+        <div className="add-more-button-container">
+          <button className="add-more-button" onClick={()=>addMore("job")}>Add more</button>
+        </div>
       </div>
 
     </div>

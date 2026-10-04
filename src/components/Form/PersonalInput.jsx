@@ -14,9 +14,9 @@ function PersonalInput({setPersonal}) {
     }
     
     return (
-        <form onSubmit={save}>
+        <div className="individual-form-wrapper">
+            <form onSubmit={save}>
     
-            <div className="individual-form-wrapper">
                 Name:
                 <div><input name="name" placeholder= "Name"></input></div>
                 Email:
@@ -27,8 +27,8 @@ function PersonalInput({setPersonal}) {
                     <button type="submit">Save</button>
                     <button>Edit</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
 
   
   )

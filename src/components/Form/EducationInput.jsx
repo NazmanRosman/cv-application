@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 function EducationInput({setEducations, setEducationKeys, educationKeys, id}) {
+    const [closing, setClosing] = useState(false);
+
     function save(e){
         e.preventDefault();
         let formData = new FormData(e.target); 
@@ -25,26 +27,32 @@ function EducationInput({setEducations, setEducationKeys, educationKeys, id}) {
         }));
     }
     function remove(){
+        if(educationKeys.length > 1){
+            setClosing(true);
+        }
         setEducations((prevEducations)=>{
             let removed = prevEducations.filter((item)=> item.id !== id);
             return [...removed];
         }) 
         //if only one education form, dont delete key
-        if(educationKeys.length > 1){
-            setEducationKeys((prevEducations)=>{
-                let removed = prevEducations.filter((item)=> item !== id);
-                return [...removed];
-        }) 
-        }
+        setTimeout(()=>{
+            if(educationKeys.length > 1){
+                setEducationKeys((prevEducations)=>{
+                    let removed = prevEducations.filter((item)=> item !== id);
+                    return [...removed];
+                }) 
+            }
+        }, 300);
     }
+    
     function addMore(){
         setEducationKeys([...educationKeys, crypto.randomUUID()])
     }
 
     return (
+        <div className={`individual-form-wrapper ${closing ? "closing" : ""}`}>
 
-        <form onSubmit={save}>
-            <div className="individual-form-wrapper">
+             <form onSubmit={save}>
                 Place of study:
                 <div><input name="school" placeholder="Place of study"></input></div>
                 Area of study:
@@ -59,8 +67,9 @@ function EducationInput({setEducations, setEducationKeys, educationKeys, id}) {
                     <button>Edit</button>
     
                 </div>
-            </div>
-        </form>
+              </form> 
+        </div>
+     
     )
 }
 

@@ -10,10 +10,10 @@ function App() {
 
   return (
     
-    <div class="app-container">
+    <div className="app-container">
       <div className="app">
         <h1 className="title">CV Maker</h1>
-        <div class="form-cv-container">
+        <div className="form-cv-container">
           <Form setPersonal={setPersonal} setEducations={setEducations} setJobs={setJobs} class="form" />
           <CV personal={personal} educations={educations} jobs={jobs} class="cv" />
         </div>
