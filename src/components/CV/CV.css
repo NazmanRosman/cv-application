@@ -16,6 +16,9 @@
     height: 900px;
     
     padding: 16px 12px 12px 12px;
+    position: fixed;
+    top: 0;
+    overflow-y: scroll;
 }
 .personal-cv{
     display: flex;
